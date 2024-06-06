@@ -1,6 +1,8 @@
 ---
 - hosts: dev
   become: True
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
     - name: Ensure python3-pip is installed
       apt:
@@ -18,9 +20,6 @@
         state: started
         enabled: yes
 
-    - name: Log in to Docker Hub
-      command: docker login -u baimisaac01 -p Naddy2507_
-
     - name: Install docker module for Python 3
       pip:
         name: docker
@@ -30,7 +29,7 @@
     - name: Start the container
       docker_container:
         name: dictionary
-        image: "baimisaac01/dictionary:{{DOCKER_TAG}}"
+        image: "baimisaac/dictionary:{{DOCKER_TAG}}"
         state: started
         published_ports:
           - "8080:8080"
