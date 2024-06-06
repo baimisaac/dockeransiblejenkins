@@ -2,7 +2,7 @@
 - hosts: dev
   become: True
   tasks:
-    - name: Install python3-pip
+    - name: Ensure python3-pip is installed
       apt:
         name: python3-pip
         state: present
@@ -12,7 +12,7 @@
         name: docker.io
         state: present
 
-    - name: start docker   
+    - name: Start docker service
       service:
         name: docker
         state: started
