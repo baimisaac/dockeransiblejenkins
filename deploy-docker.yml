@@ -29,7 +29,7 @@
     - name: Start the container
       docker_container:
         name: dictionary
-        image: "baimisaac/dictionary:{{DOCKER_TAG}}"
+        image: "baimisaac01/dictionary:{{DOCKER_TAG}}"
         state: started
         published_ports:
-          - "8080:8080"
+          0.0.0.0:8080:8080
