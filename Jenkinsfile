@@ -6,6 +6,12 @@ pipeline {
     environment {
         DOCKER_TAG = getVersion()
     }
+    options {
+        beforeAgent {
+            // Configure Git to treat the directory as safe
+            sh 'git config --global --add safe.directory /var/jenkins_home/workspace/DevOps HandsOn Test_Ibrahim'
+        }
+    }
     stages {
         stage('SCM') {
             steps {
@@ -51,6 +57,6 @@ pipeline {
 }
 
 def getVersion() {
-    def commitHash = sh label: '', returnStdout: true, script: 'git rev-parse --short HEAD'
+    def commitHash = sh(label: '', returnStdout: true, script: 'git rev-parse --short HEAD')
     return commitHash.trim()
 }
