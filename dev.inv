@@ -1,2 +1,2 @@
 [dev]
-10.0.2.23 ansible_user=webserver-ibrahim
+10.0.2.23 ansible_user=ibrahim
