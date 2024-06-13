@@ -2,14 +2,10 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <head>
-    <title>Simple Dictionary</title>
+    <title>Hello World</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<h2>Vietnamese Dictionary</h2>
-<form method="post" action="dictionary.jsp">
-    <input type="text" name="search" placeholder="Enter your word: "/>
-    <input type="submit" id="submit" value="Search"/>
-</form>
+<h2>Hello world! My name is IBRAHIM ISAAC BIN MOHAMAD AMIR ABDULLAH</h2>
 </body>
 </html>
