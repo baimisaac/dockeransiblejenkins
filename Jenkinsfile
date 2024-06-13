@@ -22,7 +22,7 @@ pipeline {
         
         stage('Docker Build') {
             steps {
-                sh "docker build . -t baimisaac01/dictionary:${DOCKER_TAG}"
+                sh "docker build . -t baimisaac01/ibrahim:${DOCKER_TAG}"
             }
         }
         
@@ -32,7 +32,7 @@ pipeline {
                     sh "docker login -u baimisaac01 -p ${dockerHubPwd}"
                 }
                 
-                sh "docker push baimisaac01/dictionary:${DOCKER_TAG}"
+                sh "docker push baimisaac01/ibrahim:${DOCKER_TAG}"
             }
         }
         
